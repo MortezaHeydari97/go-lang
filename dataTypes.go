@@ -25,11 +25,11 @@ var isAlive bool = true
  * int 		- Based on the platform( 32 bits wide in 32-bit platforms and 64 bits wide in 64-bit platforms) 
  *
  *
- * unit8 	- 8  bit - range => 0 to 255
- * unit16 	- 16 bit - range => 0 to math.Pow(2, 16) - 1
- * unit32 	- 32 bit - range => 0 to math.Pow(2, 32) - 1
- * unit64 	- 64 bit - range => 0 to math.Pow(2, 64) - 1
- * unit 	- Based on the platform( 32 bits wide in 32-bit platforms and 64 bits wide in 64-bit platforms) 
+ * uint8 	- 8  bit - range => 0 to 255
+ * uint16 	- 16 bit - range => 0 to math.Pow(2, 16) - 1
+ * uint32 	- 32 bit - range => 0 to math.Pow(2, 32) - 1
+ * uint64 	- 64 bit - range => 0 to math.Pow(2, 64) - 1
+ * uint 	- Based on the platform( 32 bits wide in 32-bit platforms and 64 bits wide in 64-bit platforms) 
  *
  * byte 	- alias for unit8
  * rune 	- alias for int32
