@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strings"
 	"math"
+	"runtime"
 )
 
 // `if` statement do not needs to parentheses but reqires the braces
@@ -39,6 +40,27 @@ func pow(x, y, limit float64) float64 {
 }
 
 
+/*
+ * Another type of condition statements is `switch`
+ * 
+**/
+func getOS() string {
+	switch os := runtime.GOOS; os {
+		case "Linux":
+			return os;
+		case "Windows":
+			return os;
+		default:
+			return "Unknown"
+	}
+}
+
+/*
+ * Switch without a condition is equal to `switch true`
+ * switch {
+ *		// some code
+ *	}
+**/
 
 
 func main() {
