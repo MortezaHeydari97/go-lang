@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 /*
  * A struct is a collection of fields.
@@ -9,6 +12,17 @@ import "fmt"
 type Primary struct {
 	x int
 	y int
+}
+
+type getAge func(int) int
+
+type getFullName func(string, string) string
+
+type User struct {
+	firstName string
+	lastName string
+	age getAge
+	fullName getFullName
 }
 
 func main() {
@@ -37,4 +51,21 @@ func main() {
 	fmt.Println("b", v2)
 	fmt.Println("c", v3)
 	fmt.Println("d", *v4)
+
+
+	// A more complex and real example to working with strcuts
+	userInfo := User{
+		firstName: "Morteza",
+		lastName: "Heydari",
+		fullName: func(fName, lName string) string {
+			full := fmt.Sprintf("%v %v", fName, lName)
+			return full
+		},
+		age: func(year int) int {
+			t := time.Now()
+			yr := t.Year()
+			return yr - year
+		},
+	}
+	fmt.Printf("My name is %v and I'm %v years old.", userInfo.fullName(userInfo.firstName, userInfo.lastName), userInfo.age(1997))
 }
